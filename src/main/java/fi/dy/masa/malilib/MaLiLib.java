@@ -1,5 +1,6 @@
 package fi.dy.masa.malilib;
 
+import net.minecraft.server.GameInstance;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +14,7 @@ import fi.dy.masa.malilib.util.data.ModInfo;
 public class MaLiLib implements ModInitializer
 {
     public static final Logger LOGGER = LogManager.getLogger(MaLiLibReference.MOD_ID);
+    public static GameInstance GAME_INSTANCE = null;
 
     @Override
     public void onInitialize() {

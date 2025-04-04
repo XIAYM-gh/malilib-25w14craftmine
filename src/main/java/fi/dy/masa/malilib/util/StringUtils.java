@@ -595,7 +595,7 @@ public class StringUtils
             {
                 // This used to be just MinecraftServer::getLevelName().
                 // Getting the name would now require an @Accessor for MinecraftServer.field_23784
-                String name = server.getSaveProperties().getLevelName();
+                String name = MaLiLib.GAME_INSTANCE.getSaveProperties().getLevelName();
                 // this was breaking non-US Locale file names
                 //return FileUtils.generateSimpleSafeFileName(name);
                 return FileNameUtils.generateSafeFileName(name);

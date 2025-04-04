@@ -2,6 +2,8 @@ package fi.dy.masa.malilib.util;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import fi.dy.masa.malilib.MaLiLib;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKey;
@@ -39,7 +41,7 @@ public class WorldUtils
 
         if (mc.world != null && server != null)
         {
-            return server.getWorld(mc.world.getRegistryKey());
+            return MaLiLib.GAME_INSTANCE.getWorld(mc.world.getRegistryKey());
         }
         else
         {
@@ -63,7 +65,7 @@ public class WorldUtils
 
         if (mc.world != null && server != null)
         {
-            ServerWorld world = server.getWorld(mc.world.getRegistryKey());
+            ServerWorld world = MaLiLib.GAME_INSTANCE.getWorld(mc.world.getRegistryKey());
 
             if (world != null)
             {

@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
+import fi.dy.masa.malilib.MaLiLib;
 import org.jetbrains.annotations.ApiStatus;
 
 import net.minecraft.client.MinecraftClient;
@@ -49,7 +50,7 @@ public class GameWrap
     {
         Entity player = getClientPlayer();
         MinecraftServer server = getIntegratedServer();
-        return player != null && server != null ? server.getWorld(player.getWorld().getRegistryKey()) : null;
+        return player != null && server != null ? MaLiLib.GAME_INSTANCE.getWorld(player.getWorld().getRegistryKey()) : null;
     }
 
     @Nullable
@@ -143,7 +144,7 @@ public class GameWrap
         {
             if (getClient().getServer() != null)
             {
-                return getClient().getServer().getGameRules();
+                return MaLiLib.GAME_INSTANCE.getGameRules();
             }
         }
         else

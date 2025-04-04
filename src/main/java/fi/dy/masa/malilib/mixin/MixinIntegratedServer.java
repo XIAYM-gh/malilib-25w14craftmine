@@ -1,5 +1,11 @@
 package fi.dy.masa.malilib.mixin;
 
+import com.llamalad7.mixinextras.sugar.Local;
+import fi.dy.masa.malilib.MaLiLib;
+import net.minecraft.resource.ResourcePackManager;
+import net.minecraft.server.GameInstance;
+import net.minecraft.server.SaveLoader;
+import net.minecraft.server.WorldGenerationProgressListenerFactory;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -26,11 +32,16 @@ public class MixinIntegratedServer
     }
 
     @Inject(method = "openToLan", at = @At("RETURN"))
-    private void checkOpenToLan(GameMode gameMode, boolean cheatsAllowed, int port, CallbackInfoReturnable<Boolean> cir)
+    private void checkOpenToLan(GameInstance gameInstance, GameMode gameMode, boolean bl, int i, CallbackInfoReturnable<Boolean> cir)
     {
         if (cir.getReturnValue())
         {
             ((ServerHandler) ServerHandler.getInstance()).onServerOpenToLan(this.client.getServer());
         }
+    }
+
+    @Inject(method = "method_69059", at = @At("RETURN"))
+    private void onStartServer(ResourcePackManager resourcePackManager, SaveLoader saveLoader, WorldGenerationProgressListenerFactory worldGenerationProgressListenerFactory, CallbackInfoReturnable<GameInstance> cir, @Local GameInstance gameInstance) {
+        MaLiLib.GAME_INSTANCE = gameInstance;
     }
 }
