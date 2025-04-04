@@ -23,8 +23,6 @@
     "minecraft:dropper",
     "minecraft:enchanting_table",
     "minecraft:end_gateway",
-    "minecraft:end_portal",
-    "minecraft:end_portal_frame",
     "minecraft:ender_chest",
     "minecraft:furnace",
     "minecraft:grindstone",
@@ -50,6 +48,9 @@
     "minecraft:structure_void",
     "minecraft:trapped_chest",
     "minecraft:trial_spawner",
-    "minecraft:vault"
+    "minecraft:vault",
+    "minecraft:mine_travelling_block",
+    "minecraft:mine_revisitor",
+    "minecraft:mine_crafter"
   ]
 }

@@ -369,6 +369,11 @@ public class BlockTagDataGenerator extends FabricTagProvider.BlockTagProvider
                 .add(Blocks.TRAPPED_CHEST)
                 .add(Blocks.TRIAL_SPAWNER)
                 .add(Blocks.VAULT)
+
+                // 25w14craftmine
+                .add(Blocks.MINE_TRAVELLING_BLOCK)
+                .add(Blocks.MINE_REVISITOR)
+                .add(Blocks.MINE_CRAFTER)
         ;
 
         getOrCreateTagBuilder(MaLiLibTag.Blocks.SCULK_BLOCKS)
