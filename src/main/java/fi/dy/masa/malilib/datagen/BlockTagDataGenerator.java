@@ -374,6 +374,8 @@ public class BlockTagDataGenerator extends FabricTagProvider.BlockTagProvider
                 .add(Blocks.MINE_TRAVELLING_BLOCK)
                 .add(Blocks.MINE_REVISITOR)
                 .add(Blocks.MINE_CRAFTER)
+                .add(Blocks.SKY)
+                .add(Blocks.SHIMMERING_DOOR)
         ;
 
         getOrCreateTagBuilder(MaLiLibTag.Blocks.SCULK_BLOCKS)
